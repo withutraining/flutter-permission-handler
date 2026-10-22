@@ -33,11 +33,11 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-2. Make sure you set the `compileSdkVersion` in your "android/app/build.gradle" file to 35:
+2. Make sure you set the `compileSdkVersion` in your "android/app/build.gradle" file to 36 (or higher):
 
 ```gradle
 android {
-  compileSdkVersion 35
+  compileSdkVersion 36
   ...
 }
 ```

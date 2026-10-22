@@ -17,6 +17,13 @@ final class PermissionConstants {
     static final int PERMISSION_CODE_ACCESS_NOTIFICATION_POLICY = 213;
     static final int PERMISSION_CODE_SCHEDULE_EXACT_ALARM = 214;
 
+    // Android 17 (API 37, "Cinnamon Bun") symbols, inlined so the plugin compiles against
+    // compileSdk 36. API 37 is only published as `platforms;android-37.0`, whose target hash
+    // AGP 8.x cannot resolve from `compileSdk = 37`. Both values are compile-time constants
+    // in the SDK, so inlining them produces identical bytecode.
+    static final int API_CINNAMON_BUN = 37;
+    static final String PERMISSION_ACCESS_LOCAL_NETWORK = "android.permission.ACCESS_LOCAL_NETWORK";
+
     // PERMISSION_GROUP
 
     // Deprecated in favor of PERMISSION_GROUP_CALENDAR_WRITE_ONLY and

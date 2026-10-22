@@ -1,3 +1,9 @@
+## 14.1.1
+
+- Lowers the plugin's `compileSdk` from `37` to `36`, so apps no longer have to compile against Android SDK 37. API 37 is only published as `platforms;android-37.0`, and AGP 8.x (still the floor for Flutter 3.47) resolves `compileSdk = 37` to the non-existent target `android-37`, failing with `Failed to find target with hash string 'android-37'` on any machine without that platform (e.g. CI).
+- Inlines the two API 37 symbols the plugin used (`Manifest.permission.ACCESS_LOCAL_NETWORK` and `Build.VERSION_CODES.CINNAMON_BUN`). Both are compile-time constants, so runtime behaviour on Android 17 is unchanged.
+- Builds with both AGP 8.11 / Gradle 8.14 and AGP 9.1 / Gradle 9.3 host apps.
+
 ## 14.1.0
 
 - Fixes `Permission.status` reporting `permanentlyDenied` after the user reset a permanently denied permission to "Ask every time" in the Android app settings (Android 11+). See [#1206](https://github.com/Baseflow/flutter-permission-handler/issues/1206).
